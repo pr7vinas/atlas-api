@@ -1,0 +1,33 @@
+/*
+ * Copyright 2016 Atlas, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * You may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for
+ * the specific language governing permissions and limitations under the License.
+ *
+ * Module: atlas
+ * File: ReadThingFacade.java
+ * Class: ReadThingFacade
+ * Qualified: com.atlas.api.v1.facades.ReadThingFacade
+ *
+ * Author: vinas
+ * Date: 10/16/16 9:45 PM
+ * Modified: 10/16/16 12:19 PM
+ */
+
+package com.atlas.api.v1.facades;
+
+import com.atlas.api.v1.models.Entity;
+
+import java.net.UnknownHostException;
+
+public class ReadThingFacade implements AtlasFacade<String, Entity> {
+    @Override
+    public Entity execute(String s) throws UnknownHostException {
+        return null;
+    }
+}
