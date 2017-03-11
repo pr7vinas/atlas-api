@@ -58,4 +58,5 @@ public class Feature extends GeoJSON {
   public void setProperties(Map<String, Object> properties) {
     this.properties = properties;
   }
+
 }

@@ -45,4 +45,5 @@ public class GeometryCollection extends GeoJSON {
   public void setGeometries(List<Geometry> geometries) {
     this.geometries = geometries;
   }
+
 }

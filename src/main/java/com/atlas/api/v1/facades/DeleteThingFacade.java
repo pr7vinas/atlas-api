@@ -27,8 +27,10 @@ import com.atlas.api.v1.models.Entity;
 import java.net.UnknownHostException;
 
 public class DeleteThingFacade implements AtlasFacade<Entity, Boolean> {
+
   @Override
   public Boolean execute(Entity entity) throws UnknownHostException {
     return null;
   }
+
 }

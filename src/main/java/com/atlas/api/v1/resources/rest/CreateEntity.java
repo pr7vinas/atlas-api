@@ -12,18 +12,19 @@
  * Module: atlas
  * File: CreateEntity.java
  * Class: CreateEntity
- * Qualified: com.atlas.api.v1.resources.CreateEntity
+ * Qualified: com.atlas.api.v1.resources.rest.CreateEntity
  *
  * Author: vinas
  * Date: 10/16/16 1:16 PM
  * Modified: 10/16/16 1:15 PM
  */
 
-package com.atlas.api.v1.resources;
+package com.atlas.api.v1.resources.rest;
 
 import com.atlas.api.v1.exceptions.ClientInitializationException;
 import com.atlas.api.v1.facades.CreateEntityFacade;
 import com.atlas.api.v1.models.Entity;
+import com.atlas.api.v1.resources.AtlasResource;
 
 import javax.inject.Singleton;
 import javax.ws.rs.*;

@@ -26,8 +26,10 @@ import com.atlas.api.v1.models.Entity;
 import java.net.UnknownHostException;
 
 public class ReadThingFacade implements AtlasFacade<String, Entity> {
+
   @Override
   public Entity execute(String s) throws UnknownHostException {
     return null;
   }
+
 }

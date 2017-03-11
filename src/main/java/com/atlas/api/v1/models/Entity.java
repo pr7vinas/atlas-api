@@ -50,4 +50,5 @@ public class Entity {
   public void setGeoJSON(GeoJSON geoJSON) {
     this.geoJSON = geoJSON;
   }
+
 }

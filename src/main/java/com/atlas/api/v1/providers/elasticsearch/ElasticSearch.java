@@ -64,6 +64,6 @@ public enum ElasticSearch implements AtlasProvider {
     } finally {
       this.getClient().close();
     }
-
   }
+
 }

@@ -41,5 +41,6 @@ public class LineString extends Geometry {
   public void setCoordinates(List<Coordinate> coordinates) {
     this.coordinates = coordinates;
   }
+
 }
 

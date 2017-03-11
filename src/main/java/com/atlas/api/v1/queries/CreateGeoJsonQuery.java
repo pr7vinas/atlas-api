@@ -41,4 +41,5 @@ public class CreateGeoJsonQuery {
 
     return indexResponse.status().compareTo(RestStatus.CREATED) == 0;
   }
+
 }

@@ -42,4 +42,5 @@ public class MultiPolygon extends Geometry {
   public void setCoordinates(List<Polygon> coordinates) {
     this.coordinates = coordinates;
   }
+
 }

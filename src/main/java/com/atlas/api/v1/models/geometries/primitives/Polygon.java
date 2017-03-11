@@ -41,5 +41,4 @@ public class Polygon extends Geometry {
     this.coordinates = coordinates;
   }
 
-
 }

@@ -12,14 +12,14 @@
  * Module: atlas
  * File: DeleteEntity.java
  * Class: DeleteEntity
- * Qualified: com.atlas.api.v1.resources.DeleteEntity
+ * Qualified: com.atlas.api.v1.resources.rest.DeleteEntity
  *
  * Author: vinas
  * Date: 10/16/16 1:35 PM
  * Modified: 10/16/16 11:58 AM
  */
 
-package com.atlas.api.v1.resources;
+package com.atlas.api.v1.resources.rest;
 
 public class DeleteEntity {
 }

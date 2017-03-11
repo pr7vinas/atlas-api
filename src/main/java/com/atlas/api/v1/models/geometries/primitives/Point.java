@@ -39,4 +39,5 @@ public class Point extends Geometry {
   public void setCoordinates(Coordinate coordinates) {
     this.coordinates = coordinates;
   }
+
 }

@@ -41,4 +41,5 @@ public class MultiPoint extends Geometry {
   public void setCoordinates(List<Point> coordinates) {
     this.coordinates = coordinates;
   }
+
 }

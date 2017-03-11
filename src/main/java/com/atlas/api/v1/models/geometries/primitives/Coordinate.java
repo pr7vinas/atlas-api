@@ -51,4 +51,5 @@ public class Coordinate {
   public void setAltitude(long altitude) {
     this.altitude = altitude;
   }
+
 }

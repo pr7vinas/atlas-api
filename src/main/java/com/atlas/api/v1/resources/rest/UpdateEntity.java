@@ -10,16 +10,16 @@
  * the specific language governing permissions and limitations under the License.
  *
  * Module: atlas
- * File: ReadEntity.java
- * Class: ReadEntity
- * Qualified: com.atlas.api.v1.resources.ReadEntity
+ * File: UpdateEntity.java
+ * Class: UpdateEntity
+ * Qualified: com.atlas.api.v1.resources.rest.UpdateEntity
  *
  * Author: vinas
  * Date: 10/16/16 1:35 PM
  * Modified: 10/16/16 11:58 AM
  */
 
-package com.atlas.api.v1.resources;
+package com.atlas.api.v1.resources.rest;
 
-public class ReadEntity {
+public class UpdateEntity {
 }

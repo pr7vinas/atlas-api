@@ -28,7 +28,6 @@ import java.util.List;
 
 public class FeatureCollection extends GeoJSON {
 
-
   private List<Feature> features;
 
   public FeatureCollection() {
@@ -42,4 +41,5 @@ public class FeatureCollection extends GeoJSON {
   public void setFeatures(List<Feature> features) {
     this.features = features;
   }
+
 }

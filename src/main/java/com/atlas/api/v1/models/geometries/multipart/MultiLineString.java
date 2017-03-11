@@ -39,7 +39,6 @@ public class MultiLineString extends Geometry {
     return coordinates;
   }
 
-
   public void setCoordinates(List<LineString> coordinates) {
     this.coordinates = coordinates;
   }
