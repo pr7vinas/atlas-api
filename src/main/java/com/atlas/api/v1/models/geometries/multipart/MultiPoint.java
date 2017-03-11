@@ -28,17 +28,17 @@ import java.util.List;
 
 public class MultiPoint extends Geometry {
 
-    private List<Point> coordinates;
+  private List<Point> coordinates;
 
-    public MultiPoint() {
-        this.type = "MultiPoint";
-    }
+  public MultiPoint() {
+    this.type = "MultiPoint";
+  }
 
-    public List<Point> getCoordinates() {
-        return coordinates;
-    }
+  public List<Point> getCoordinates() {
+    return coordinates;
+  }
 
-    public void setCoordinates(List<Point> coordinates) {
-        this.coordinates = coordinates;
-    }
+  public void setCoordinates(List<Point> coordinates) {
+    this.coordinates = coordinates;
+  }
 }

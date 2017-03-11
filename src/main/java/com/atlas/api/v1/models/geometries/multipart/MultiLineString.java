@@ -29,20 +29,20 @@ import java.util.List;
 
 public class MultiLineString extends Geometry {
 
-    private List<LineString> coordinates;
+  private List<LineString> coordinates;
 
-    public MultiLineString() {
-        this.type = "MultiLineString";
-    }
+  public MultiLineString() {
+    this.type = "MultiLineString";
+  }
 
-    public List<LineString> getCoordinates() {
-        return coordinates;
-    }
+  public List<LineString> getCoordinates() {
+    return coordinates;
+  }
 
 
-    public void setCoordinates(List<LineString> coordinates) {
-        this.coordinates = coordinates;
-    }
+  public void setCoordinates(List<LineString> coordinates) {
+    this.coordinates = coordinates;
+  }
 
 
 }

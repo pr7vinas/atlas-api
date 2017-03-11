@@ -28,18 +28,18 @@ import java.util.List;
 
 public class LineString extends Geometry {
 
-    private List<Coordinate> coordinates;
+  private List<Coordinate> coordinates;
 
-    public LineString() {
-        this.type = "LineString";
-    }
+  public LineString() {
+    this.type = "LineString";
+  }
 
-    public List<Coordinate> getCoordinates() {
-        return coordinates;
-    }
+  public List<Coordinate> getCoordinates() {
+    return coordinates;
+  }
 
-    public void setCoordinates(List<Coordinate> coordinates) {
-        this.coordinates = coordinates;
-    }
+  public void setCoordinates(List<Coordinate> coordinates) {
+    this.coordinates = coordinates;
+  }
 }
 

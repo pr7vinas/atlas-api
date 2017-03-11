@@ -33,12 +33,12 @@ import java.util.UUID;
 
 public class CreateGeoJsonQuery {
 
-    public boolean run(final Entity entity) throws ClientInitializationException {
-        IndexResponse indexResponse = ElasticSearch.INSTANCE.execute(client -> client.prepareIndex(
-                entity.getIndex(),
-                entity.getType(),
-                UUID.randomUUID().toString()).setSource(ElasticSearch.INSTANCE.toJson(entity)).get());
+  public boolean run(final Entity entity) throws ClientInitializationException {
+    IndexResponse indexResponse = ElasticSearch.INSTANCE.execute(client -> client.prepareIndex(
+      entity.getIndex(),
+      entity.getType(),
+      UUID.randomUUID().toString()).setSource(ElasticSearch.INSTANCE.toJson(entity)).get());
 
-        return indexResponse.status().compareTo(RestStatus.CREATED) == 0;
-    }
+    return indexResponse.status().compareTo(RestStatus.CREATED) == 0;
+  }
 }

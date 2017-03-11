@@ -29,17 +29,17 @@ import java.util.List;
 public class FeatureCollection extends GeoJSON {
 
 
-    private List<Feature> features;
+  private List<Feature> features;
 
-    public FeatureCollection() {
-        this.type = "FeatureCollection";
-    }
+  public FeatureCollection() {
+    this.type = "FeatureCollection";
+  }
 
-    public List<Feature> getFeatures() {
-        return features;
-    }
+  public List<Feature> getFeatures() {
+    return features;
+  }
 
-    public void setFeatures(List<Feature> features) {
-        this.features = features;
-    }
+  public void setFeatures(List<Feature> features) {
+    this.features = features;
+  }
 }

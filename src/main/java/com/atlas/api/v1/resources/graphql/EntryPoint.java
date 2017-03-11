@@ -33,23 +33,23 @@ import static graphql.schema.GraphQLObjectType.newObject;
 
 class HelloWorld {
 
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        GraphQLObjectType queryType = newObject()
-                .name("helloWorldQuery")
-                .field(newFieldDefinition()
-                        .type(GraphQLString)
-                        .name("hello")
-                        .staticValue("world").build()
-                ).build();
+    GraphQLObjectType queryType = newObject()
+      .name("helloWorldQuery")
+      .field(newFieldDefinition()
+        .type(GraphQLString)
+        .name("hello")
+        .staticValue("world").build()
+      ).build();
 
-        GraphQLSchema schema = GraphQLSchema.newSchema()
-                .query(queryType)
-                .build();
+    GraphQLSchema schema = GraphQLSchema.newSchema()
+      .query(queryType)
+      .build();
 
-        Map<String, Object> result = (Map<String, Object>) new GraphQL(schema).execute("{hello}").getData();
+    Map<String, Object> result = (Map<String, Object>) new GraphQL(schema).execute("{hello}").getData();
 
-        System.out.println(result);
-        // Prints: {hello=world}
-    }
+    System.out.println(result);
+    // Prints: {hello=world}
+  }
 }

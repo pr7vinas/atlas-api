@@ -24,7 +24,7 @@ package com.atlas.api.v1.exceptions;
 import java.net.UnknownHostException;
 
 public class ClientInitializationException extends Exception {
-    public ClientInitializationException(UnknownHostException e) {
-        super(e);
-    }
+  public ClientInitializationException(UnknownHostException e) {
+    super(e);
+  }
 }

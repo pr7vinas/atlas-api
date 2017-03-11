@@ -24,14 +24,14 @@ package com.atlas.api.v1.models;
 
 public class GeoJSON {
 
-    protected String type;
+  protected String type;
 
-    public String getType() {
-        return type;
-    }
+  public String getType() {
+    return type;
+  }
 
-    public void setType(String type) {
-        this.type = type;
-    }
+  public void setType(String type) {
+    this.type = type;
+  }
 
 }

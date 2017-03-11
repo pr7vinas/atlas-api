@@ -29,41 +29,41 @@ import java.util.function.Function;
  * Time: 13:18
  **/
 public enum ElasticSearch implements AtlasProvider {
-    INSTANCE;
+  INSTANCE;
 
-    private static final String ATLAS_CLUSTER = "atlas_cluster";
-    private static final String CLUSTER_NAME = "cluster.name";
+  private static final String ATLAS_CLUSTER = "atlas_cluster";
+  private static final String CLUSTER_NAME = "cluster.name";
 
-    private final String host;
-    private final int port;
-    private final Settings settings;
-    private TransportClient client = null;
+  private final String host;
+  private final int port;
+  private final Settings settings;
+  private TransportClient client = null;
 
-    ElasticSearch() {
-        settings = Settings.builder().put(CLUSTER_NAME, ATLAS_CLUSTER).build();
-        host = "localhost";
-        port = 9200;
+  ElasticSearch() {
+    settings = Settings.builder().put(CLUSTER_NAME, ATLAS_CLUSTER).build();
+    host = "localhost";
+    port = 9200;
+  }
+
+  private TransportClient getClient() throws ClientInitializationException {
+    try {
+      if (client == null) {
+        client = new PreBuiltTransportClient(settings);
+        client.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName(host), port));
+      }
+      return client;
+    } catch (UnknownHostException e) {
+      throw new ClientInitializationException(e);
+    }
+  }
+
+  public <INPUT extends Function<TransportClient, OUTPUT>, OUTPUT> OUTPUT execute(INPUT input)
+  throws ClientInitializationException {
+    try {
+      return input.apply(this.getClient());
+    } finally {
+      this.getClient().close();
     }
 
-    private TransportClient getClient() throws ClientInitializationException {
-        try {
-            if (client == null) {
-                client = new PreBuiltTransportClient(settings);
-                client.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName(host), port));
-            }
-            return client;
-        } catch (UnknownHostException e) {
-            throw new ClientInitializationException(e);
-        }
-    }
-
-    public <INPUT extends Function<TransportClient, OUTPUT>, OUTPUT> OUTPUT execute(INPUT input)
-    throws ClientInitializationException {
-        try {
-            return input.apply(this.getClient());
-        } finally {
-            this.getClient().close();
-        }
-
-    }
+  }
 }

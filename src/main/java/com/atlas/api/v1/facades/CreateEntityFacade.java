@@ -27,15 +27,15 @@ import com.atlas.api.v1.queries.CreateGeoJsonQuery;
 
 public class CreateEntityFacade implements AtlasFacade<Entity, Boolean> {
 
-    private final CreateGeoJsonQuery query;
+  private final CreateGeoJsonQuery query;
 
-    public CreateEntityFacade() {
-        this.query = new CreateGeoJsonQuery();
-    }
+  public CreateEntityFacade() {
+    this.query = new CreateGeoJsonQuery();
+  }
 
-    @Override
-    public Boolean execute(final Entity entity) throws ClientInitializationException {
-        return query.run(entity);
-    }
+  @Override
+  public Boolean execute(final Entity entity) throws ClientInitializationException {
+    return query.run(entity);
+  }
 
 }

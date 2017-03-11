@@ -24,31 +24,31 @@ package com.atlas.api.v1.models.geometries.primitives;
 
 public class Coordinate {
 
-    private long longitude;
-    private long latitude;
-    private long altitude;
+  private long longitude;
+  private long latitude;
+  private long altitude;
 
-    public long getLongitude() {
-        return longitude;
-    }
+  public long getLongitude() {
+    return longitude;
+  }
 
-    public void setLongitude(long longitude) {
-        this.longitude = longitude;
-    }
+  public void setLongitude(long longitude) {
+    this.longitude = longitude;
+  }
 
-    public long getLatitude() {
-        return latitude;
-    }
+  public long getLatitude() {
+    return latitude;
+  }
 
-    public void setLatitude(long latitude) {
-        this.latitude = latitude;
-    }
+  public void setLatitude(long latitude) {
+    this.latitude = latitude;
+  }
 
-    public long getAltitude() {
-        return altitude;
-    }
+  public long getAltitude() {
+    return altitude;
+  }
 
-    public void setAltitude(long altitude) {
-        this.altitude = altitude;
-    }
+  public void setAltitude(long altitude) {
+    this.altitude = altitude;
+  }
 }

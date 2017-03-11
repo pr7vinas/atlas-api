@@ -26,17 +26,17 @@ import com.atlas.api.v1.models.geometries.Geometry;
 
 public class Point extends Geometry {
 
-    private Coordinate coordinates;
+  private Coordinate coordinates;
 
-    public Point() {
-        this.type = "Point";
-    }
+  public Point() {
+    this.type = "Point";
+  }
 
-    public Coordinate getCoordinates() {
-        return coordinates;
-    }
+  public Coordinate getCoordinates() {
+    return coordinates;
+  }
 
-    public void setCoordinates(Coordinate coordinates) {
-        this.coordinates = coordinates;
-    }
+  public void setCoordinates(Coordinate coordinates) {
+    this.coordinates = coordinates;
+  }
 }

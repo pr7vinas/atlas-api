@@ -30,36 +30,36 @@ import javax.ws.rs.core.Response;
 
 public interface AtlasResource {
 
-    default void check(Entity entity) {
-        checkEntity(entity);
-        checkGeoJson(entity.getGeoJSON());
-    }
+  default void check(Entity entity) {
+    checkEntity(entity);
+    checkGeoJson(entity.getGeoJSON());
+  }
 
-    default void checkEntity(Entity entity) {
-        if (entity == null) {
-            //// TODO: 16/10/16 log it propertly
-            throw new WebApplicationException(Response.Status.BAD_REQUEST);
-        }
-        if (entity.getIndex() == null || entity.getIndex().trim().isEmpty()) {
-            //// TODO: 16/10/16 log it propertly
-            throw new WebApplicationException(Response.Status.BAD_REQUEST);
-
-        }
-        if (entity.getType() == null || entity.getType().trim().isEmpty()) {
-            //// TODO: 16/10/16 log it propertly
-            throw new WebApplicationException(Response.Status.BAD_REQUEST);
-        }
+  default void checkEntity(Entity entity) {
+    if (entity == null) {
+      //// TODO: 16/10/16 log it propertly
+      throw new WebApplicationException(Response.Status.BAD_REQUEST);
     }
+    if (entity.getIndex() == null || entity.getIndex().trim().isEmpty()) {
+      //// TODO: 16/10/16 log it propertly
+      throw new WebApplicationException(Response.Status.BAD_REQUEST);
 
-    default void checkGeoJson(GeoJSON geoJSON) {
-        if (geoJSON == null) {
-            //// TODO: 16/10/16 log it propertly
-            throw new WebApplicationException(Response.Status.BAD_REQUEST);
-        }
-        if (geoJSON.getType() == null || geoJSON.getType().trim().isEmpty()) {
-            //// TODO: 16/10/16 log it propertly
-            throw new WebApplicationException(Response.Status.BAD_REQUEST);
-        }
     }
+    if (entity.getType() == null || entity.getType().trim().isEmpty()) {
+      //// TODO: 16/10/16 log it propertly
+      throw new WebApplicationException(Response.Status.BAD_REQUEST);
+    }
+  }
+
+  default void checkGeoJson(GeoJSON geoJSON) {
+    if (geoJSON == null) {
+      //// TODO: 16/10/16 log it propertly
+      throw new WebApplicationException(Response.Status.BAD_REQUEST);
+    }
+    if (geoJSON.getType() == null || geoJSON.getType().trim().isEmpty()) {
+      //// TODO: 16/10/16 log it propertly
+      throw new WebApplicationException(Response.Status.BAD_REQUEST);
+    }
+  }
 
 }

@@ -22,7 +22,6 @@
 package com.atlas.api;
 
 import com.atlas.servers.GrizzlyServer;
-
 import org.irenical.lifecycle.builder.CompositeLifeCycle;
 
 public class App {

@@ -28,21 +28,21 @@ import java.util.List;
 
 public class GeometryCollection extends GeoJSON {
 
-    private List<Geometry> geometries;
+  private List<Geometry> geometries;
 
-    public GeometryCollection() {
-        this.type = "GeometryCollection";
-    }
+  public GeometryCollection() {
+    this.type = "GeometryCollection";
+  }
 
-    public String getType() {
-        return type;
-    }
+  public String getType() {
+    return type;
+  }
 
-    public List<Geometry> getGeometries() {
-        return geometries;
-    }
+  public List<Geometry> getGeometries() {
+    return geometries;
+  }
 
-    public void setGeometries(List<Geometry> geometries) {
-        this.geometries = geometries;
-    }
+  public void setGeometries(List<Geometry> geometries) {
+    this.geometries = geometries;
+  }
 }

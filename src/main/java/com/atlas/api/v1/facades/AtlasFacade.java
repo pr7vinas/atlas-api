@@ -28,7 +28,7 @@ import java.net.UnknownHostException;
 
 public interface AtlasFacade<INPUT, OUTPUT> {
 
-    OUTPUT execute(final INPUT input) throws UnknownHostException, ClientInitializationException;
+  OUTPUT execute(final INPUT input) throws UnknownHostException, ClientInitializationException;
 
 
 }

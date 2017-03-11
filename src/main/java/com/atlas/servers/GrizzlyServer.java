@@ -37,49 +37,49 @@ import java.util.concurrent.Executors;
 
 final public class GrizzlyServer implements LifeCycle {
 
-    private static ExecutorService threadPool = Executors.newCachedThreadPool();
-    private HttpServer server;
+  private static ExecutorService threadPool = Executors.newCachedThreadPool();
+  private HttpServer server;
 
-    private static ExecutorService getThreadPool() {
-        if (threadPool == null || threadPool.isShutdown()) {
-            threadPool = Executors.newCachedThreadPool(toRun -> new Thread(toRun, "ATLAS-ASYNC-TASK"));
-        }
-        return threadPool;
+  private static ExecutorService getThreadPool() {
+    if (threadPool == null || threadPool.isShutdown()) {
+      threadPool = Executors.newCachedThreadPool(toRun -> new Thread(toRun, "ATLAS-ASYNC-TASK"));
     }
+    return threadPool;
+  }
 
-    @Override
-    public void start() throws Exception {
-        Properties prop = loadProperties();
+  @Override
+  public void start() throws Exception {
+    Properties prop = loadProperties();
 
-        URI baseUri = UriBuilder
-                .fromUri((String) prop.get("server.base.uri"))
-                .port(Integer.valueOf((String) prop.get("server.base.port")))
-                .path((String) prop.get("server.base.path"))
-                .build();
+    URI baseUri = UriBuilder
+      .fromUri((String) prop.get("server.base.uri"))
+      .port(Integer.valueOf((String) prop.get("server.base.port")))
+      .path((String) prop.get("server.base.path"))
+      .build();
 
 
-        ResourceConfig configuration = new ResourceConfig();
-        configuration.packages("com.atlas.api.v1.resources");
-        configuration.register(JacksonFeature.class);
-        server = GrizzlyHttpServerFactory.createHttpServer(baseUri, configuration);
-    }
+    ResourceConfig configuration = new ResourceConfig();
+    configuration.packages("com.atlas.api.v1.resources");
+    configuration.register(JacksonFeature.class);
+    server = GrizzlyHttpServerFactory.createHttpServer(baseUri, configuration);
+  }
 
-    private Properties loadProperties() throws IOException {
-        Properties prop = new Properties();
-        InputStream input = getClass().getClassLoader().getResourceAsStream("config.properties");
-        prop.load(input);
-        return prop;
-    }
+  private Properties loadProperties() throws IOException {
+    Properties prop = new Properties();
+    InputStream input = getClass().getClassLoader().getResourceAsStream("config.properties");
+    prop.load(input);
+    return prop;
+  }
 
-    @Override
-    public void stop() {
-        getThreadPool().shutdown();
-        server.shutdown();
-    }
+  @Override
+  public void stop() {
+    getThreadPool().shutdown();
+    server.shutdown();
+  }
 
-    @Override
-    public boolean isRunning() {
-        return server.isStarted();
-    }
+  @Override
+  public boolean isRunning() {
+    return server.isStarted();
+  }
 
 }

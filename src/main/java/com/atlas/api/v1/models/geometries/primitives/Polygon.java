@@ -27,19 +27,19 @@ import java.util.List;
 
 public class Polygon extends Geometry {
 
-    private List<LineString> coordinates;
+  private List<LineString> coordinates;
 
-    public Polygon() {
-        this.type = "Polygon";
-    }
+  public Polygon() {
+    this.type = "Polygon";
+  }
 
-    public List<LineString> getCoordinates() {
-        return coordinates;
-    }
+  public List<LineString> getCoordinates() {
+    return coordinates;
+  }
 
-    public void setCoordinates(List<LineString> coordinates) {
-        this.coordinates = coordinates;
-    }
+  public void setCoordinates(List<LineString> coordinates) {
+    this.coordinates = coordinates;
+  }
 
 
 }

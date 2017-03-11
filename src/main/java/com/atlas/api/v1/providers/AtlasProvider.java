@@ -27,9 +27,9 @@ import com.google.gson.Gson;
 
 public interface AtlasProvider {
 
-    default String toJson(Object o) {
-        Gson gson = new Gson();
-        return gson.toJson(o);
-    }
+  default String toJson(Object o) {
+    Gson gson = new Gson();
+    return gson.toJson(o);
+  }
 
 }

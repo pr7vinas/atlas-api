@@ -29,17 +29,17 @@ import java.util.List;
 
 public class MultiPolygon extends Geometry {
 
-    private List<Polygon> coordinates;
+  private List<Polygon> coordinates;
 
-    public MultiPolygon() {
-        this.type = "MultiPolygon";
-    }
+  public MultiPolygon() {
+    this.type = "MultiPolygon";
+  }
 
-    public List<Polygon> getCoordinates() {
-        return coordinates;
-    }
+  public List<Polygon> getCoordinates() {
+    return coordinates;
+  }
 
-    public void setCoordinates(List<Polygon> coordinates) {
-        this.coordinates = coordinates;
-    }
+  public void setCoordinates(List<Polygon> coordinates) {
+    this.coordinates = coordinates;
+  }
 }

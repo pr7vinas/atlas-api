@@ -23,31 +23,31 @@ package com.atlas.api.v1.models;
 
 public class Entity {
 
-    private String index;
-    private String type;
-    private GeoJSON geoJSON;
+  private String index;
+  private String type;
+  private GeoJSON geoJSON;
 
-    public String getIndex() {
-        return index;
-    }
+  public String getIndex() {
+    return index;
+  }
 
-    public void setIndex(String index) {
-        this.index = index;
-    }
+  public void setIndex(String index) {
+    this.index = index;
+  }
 
-    public String getType() {
-        return type;
-    }
+  public String getType() {
+    return type;
+  }
 
-    public void setType(String type) {
-        this.type = type;
-    }
+  public void setType(String type) {
+    this.type = type;
+  }
 
-    public GeoJSON getGeoJSON() {
-        return geoJSON;
-    }
+  public GeoJSON getGeoJSON() {
+    return geoJSON;
+  }
 
-    public void setGeoJSON(GeoJSON geoJSON) {
-        this.geoJSON = geoJSON;
-    }
+  public void setGeoJSON(GeoJSON geoJSON) {
+    this.geoJSON = geoJSON;
+  }
 }
