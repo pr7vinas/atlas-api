@@ -21,14 +21,12 @@
 
 package com.atlas.api.v1.resources;
 
+import com.atlas.api.v1.exceptions.ClientInitializationException;
 import com.atlas.api.v1.facades.CreateEntityFacade;
 import com.atlas.api.v1.models.Entity;
 
 import javax.inject.Singleton;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.PUT;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
@@ -37,28 +35,35 @@ import javax.ws.rs.core.Response.Status;
 @Path("/api/v1/entity")
 public class CreateEntity implements AtlasResource {
 
-  private CreateEntityFacade createEntityFacade;
+    private CreateEntityFacade createEntityFacade;
 
-  public CreateEntity() {
-    this.createEntityFacade = new CreateEntityFacade();
-  }
+    public CreateEntity() {
+        this.createEntityFacade = new CreateEntityFacade();
+    }
 
-  @PUT
-  @Consumes(MediaType.APPLICATION_JSON)
-  @Produces(MediaType.APPLICATION_JSON)
-  public Response execute(Entity entity) {
-    check(entity);
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response execute(Entity entity) {
+        check(entity);
+        boolean created = create(entity);
+        return buildResponse(created);
+    }
 
-    Boolean created = createEntityFacade.execute(entity);
+    private boolean create(Entity entity) {
+        boolean created;
+        try {
+            created = createEntityFacade.execute(entity);
+        } catch (ClientInitializationException e) {
+            throw new WebApplicationException(Status.INTERNAL_SERVER_ERROR);
+        }
+        return created;
+    }
 
-    return buildResponse(created);
-
-  }
-
-  private Response buildResponse(Boolean created) {
-    return created
-            ? Response.status(Status.CREATED).build()
-            : Response.status(Status.INTERNAL_SERVER_ERROR).build();
-  }
+    private Response buildResponse(boolean created) {
+        return created
+                ? Response.status(Status.CREATED).build()
+                : Response.status(Status.INTERNAL_SERVER_ERROR).build();
+    }
 
 }

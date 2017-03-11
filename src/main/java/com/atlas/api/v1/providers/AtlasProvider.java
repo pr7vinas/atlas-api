@@ -24,9 +24,8 @@ package com.atlas.api.v1.providers;
 
 import com.google.gson.Gson;
 
-public interface AtlasProvider<CLIENT> {
 
-    <ERROR extends Exception> CLIENT getClient() throws ERROR;
+public interface AtlasProvider {
 
     default String toJson(Object o) {
         Gson gson = new Gson();

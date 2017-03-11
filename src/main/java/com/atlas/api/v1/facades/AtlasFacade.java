@@ -22,11 +22,13 @@
 package com.atlas.api.v1.facades;
 
 
+import com.atlas.api.v1.exceptions.ClientInitializationException;
+
 import java.net.UnknownHostException;
 
 public interface AtlasFacade<INPUT, OUTPUT> {
 
-    OUTPUT execute(final INPUT input) throws UnknownHostException;
+    OUTPUT execute(final INPUT input) throws UnknownHostException, ClientInitializationException;
 
 
 }

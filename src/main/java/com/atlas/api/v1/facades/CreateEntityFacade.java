@@ -21,6 +21,7 @@
 
 package com.atlas.api.v1.facades;
 
+import com.atlas.api.v1.exceptions.ClientInitializationException;
 import com.atlas.api.v1.models.Entity;
 import com.atlas.api.v1.queries.CreateGeoJsonQuery;
 
@@ -33,7 +34,7 @@ public class CreateEntityFacade implements AtlasFacade<Entity, Boolean> {
     }
 
     @Override
-    public Boolean execute(final Entity entity) {
+    public Boolean execute(final Entity entity) throws ClientInitializationException {
         return query.run(entity);
     }
 

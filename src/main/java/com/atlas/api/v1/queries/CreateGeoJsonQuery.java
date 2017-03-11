@@ -24,33 +24,21 @@ package com.atlas.api.v1.queries;
 
 import com.atlas.api.v1.exceptions.ClientInitializationException;
 import com.atlas.api.v1.models.Entity;
-import com.atlas.api.v1.providers.ElasticSearchProvider;
+import com.atlas.api.v1.providers.elasticsearch.ElasticSearch;
 import org.elasticsearch.action.index.IndexResponse;
+import org.elasticsearch.rest.RestStatus;
 
 import java.util.UUID;
 
 
 public class CreateGeoJsonQuery {
 
-    private ElasticSearchProvider elastic;
+    public boolean run(final Entity entity) throws ClientInitializationException {
+        IndexResponse indexResponse = ElasticSearch.INSTANCE.execute(client -> client.prepareIndex(
+                entity.getIndex(),
+                entity.getType(),
+                UUID.randomUUID().toString()).setSource(ElasticSearch.INSTANCE.toJson(entity)).get());
 
-    public CreateGeoJsonQuery() {
-        this.elastic = new ElasticSearchProvider();
-    }
-
-    public boolean run(final Entity entity) {
-        IndexResponse indexResponse = null;
-        try {
-            indexResponse = elastic.getClient()
-                    .prepareIndex(
-                            entity.getIndex(),
-                            entity.getType(),
-                            UUID.randomUUID().toString())
-                    .setSource(elastic.toJson(entity))
-                    .get();
-        } catch (ClientInitializationException e) {
-            e.printStackTrace();
-        }
-        return indexResponse != null && indexResponse.isCreated();
+        return indexResponse.status().compareTo(RestStatus.CREATED) == 0;
     }
 }
